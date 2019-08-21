@@ -3,6 +3,7 @@
 #include <cmath>
 #include <vector>
 #include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -39,6 +40,7 @@ public:
 
     virtual string str() const
     {
+        
         stringstream ss;
         ss << name << "(" << x << "," << y << ")";
         ss << ". area = " << area();
@@ -52,6 +54,43 @@ protected:
     int x{};
     int y{};
     string name{};
+};
+
+class Rectangle : public Shape
+{
+    public:
+        Rectangle(int x, int y, int w, int h) :
+            Shape(x, y, "rectangle"),
+            w{w}, h{h}
+            {}
+            virtual ~Rectangle() = default;
+            Rectangle(const Rectangle &o) = default;
+            virtual double area() const override {return w * h;}
+            virtual double perimeter() const override {return 2 * (w + h);}
+
+            virtual string str() const override{
+                stringstream ss;
+                ss << Shape::str() << ". W = " << w << ", h = " << h;
+                return ss.str();
+            }
+    protected:
+        int w{};
+        int h{};
+};
+
+class Square : public Rectangle
+{
+    public:
+        Square(int x, int y, int l) : Rectangle(x, y, l, l){
+            name = "square";
+        }
+
+        virtual ~Square(){}
+        virtual string str() const override{
+            stringstream ss;
+            ss << Shape::str() << ". l = " << w;
+            return ss.str();
+        }
 };
 
 ostream &operator<<(ostream &out, const Shape &s)
@@ -88,6 +127,9 @@ protected:
     int radius;
 };
 
+// cannot derive final class
+// class SquareReinvented : public Square{};
+
 int main()
 {
     Circle c{10, 20, 10};
@@ -98,7 +140,9 @@ int main()
 
     vector<Shape*> shapes{
         new Circle{10, 20, 20}, new Circle{10, 10, 10},
-        new Circle{10, 20, 30}
+        new Circle{10, 20, 30}, new Rectangle{10, 10, 20, 30},
+        new Rectangle{20, 30, 20, 20}, new Square(10, 10, 20),
+        new Square(10, 30, 50)
      };
 
     for (auto shape : shapes)
