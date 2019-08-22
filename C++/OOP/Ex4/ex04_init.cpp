@@ -40,6 +40,11 @@ int main(){
 
     cout << objects << endl;
 
+    map<string, int> m {
+        {"Ioana", 4},
+        {"Valer", 44},
+        {"Zacusca", 32}
+    };
 
     return 0;
 }
