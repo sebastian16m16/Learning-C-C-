@@ -37,13 +37,19 @@ int main(){
     cout << ring4 << endl;
 
     //old school iteration
-    for(ring<string>::iterator it = ring2.begin(); it != ring2.end(); it++){
-        cout << *it << endl;
-    }
+    // for(ring<string>::iterator it = ring2.begin(); it != ring2.end(); it++){
+    //     cout << *it << endl;
+    // }
 
 
     for (auto e : ring4)
         cout << e << endl;
+
+    ring<string> ring5 {3, {"Ana", "Ion", "Valer"}};
+    ring<string> ring6 {"Ana", "Aici nu", "Valer"};
+
+    cout << ring5 << endl;
+    cout << ring6 << endl;
 
     return 0;
 }

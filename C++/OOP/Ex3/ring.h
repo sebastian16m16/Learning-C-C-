@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <initializer_list>
+#include <map>
 
 template<typename T>
 
@@ -24,8 +26,26 @@ class ring{
                     add(o.m_buf[i]);
                 m_pos = o.m_pos;
             }
+        
+        ring(unsigned capacity, std::initializer_list<T> l):
+            ring(capacity)
+        
+        {
+            m_buf = new T[capacity]{};
+            for(auto item : l){
+                add(item);
+            }
+        }
 
-        ring &operator=(const ring &o){
+        ring(std::initializer_list<T> l) : ring(l.size())
+        {
+            for(auto n : l){
+                add(n);
+            }
+        }
+
+        ring &operator=(const ring &o)
+        {
             m_capacity = o.m_capacity;
             m_pos = 0u;
             delete[] m_buf;
@@ -48,8 +68,8 @@ class ring{
             return m_buf[index];
         }
 
-        ring &add(T obj){
-            if(m_capacity == 0u) return *this;
+        ring &add(T obj){                           //daca nu e &add ci doar add... de fiecare data cand se apeleaza functia va crea un 
+            if(m_capacity == 0u) return *this;      //obiect de fiecare data (Ar fi haos)
             m_buf[m_pos++] = obj;
             m_pos = m_pos % m_capacity;
             return *this;
@@ -76,7 +96,7 @@ class ring{
 };
 
 template<typename T>
-class ring<T>::iterator
+class ring<T>::iterator //se defineste clasa iterator din clasa ring
 {
     public:
         iterator(unsigned pos, ring &r) : 
