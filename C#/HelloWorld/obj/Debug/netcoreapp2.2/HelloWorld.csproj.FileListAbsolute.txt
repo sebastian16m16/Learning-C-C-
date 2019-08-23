@@ -1,0 +1,11 @@
+/home/johnnybravo/Learning/C#/HelloWorld/bin/Debug/netcoreapp2.2/HelloWorld.deps.json
+/home/johnnybravo/Learning/C#/HelloWorld/bin/Debug/netcoreapp2.2/HelloWorld.runtimeconfig.json
+/home/johnnybravo/Learning/C#/HelloWorld/bin/Debug/netcoreapp2.2/HelloWorld.runtimeconfig.dev.json
+/home/johnnybravo/Learning/C#/HelloWorld/bin/Debug/netcoreapp2.2/HelloWorld.dll
+/home/johnnybravo/Learning/C#/HelloWorld/bin/Debug/netcoreapp2.2/HelloWorld.pdb
+/home/johnnybravo/Learning/C#/HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.csprojAssemblyReference.cache
+/home/johnnybravo/Learning/C#/HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.csproj.CoreCompileInputs.cache
+/home/johnnybravo/Learning/C#/HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.AssemblyInfoInputs.cache
+/home/johnnybravo/Learning/C#/HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.AssemblyInfo.cs
+/home/johnnybravo/Learning/C#/HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.dll
+/home/johnnybravo/Learning/C#/HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.pdb
