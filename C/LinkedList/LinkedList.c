@@ -28,7 +28,7 @@ typedef struct LinkedList
 
     struct LinkedList *(*add)(struct LinkedList **,struct  LinkedList **, void*, size_t); //add node
     void(*removeNode)(struct LinkedList **,struct  LinkedList **,struct  LinkedList *); //remove node
-    void(*displayList)(struct LinkedList *, void(*)(void*); //display linked list
+    void(*displayList)(struct LinkedList *, void(*)(void*)); //display linked list
 }LinkedList;
 
 void removeNode(LinkedList ** Head, LinkedList ** Last, LinkedList *node){
